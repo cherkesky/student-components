@@ -2,6 +2,20 @@ html {
   background-color: rgb(64, 64, 64);
 }
 
+/* added some extra styling so it will actually look like chat */
+
+#messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px;
+
+}
+
+/* ****************************************************************** */
+
 #container {
   display: flex;
   flex-direction: column;
