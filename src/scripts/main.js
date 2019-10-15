@@ -76,7 +76,7 @@
 
 
 
- const studentContainer = document.querySelector("#container")
+ const chatContainer = document.querySelector("#container")
 
 
 // for (let i=0; i<students.length; i++) {
@@ -171,18 +171,43 @@
 // Using appendChild(), attach each message as a child to the messages element.
 
 
+// const myMessages = ["hello is this Mom? ", "Hi Guy, this is Mom. How you doing? ", "All good, doing some JS exercises... ", "On 4th of July??! god you're a nerd"];
+
+// const messagesContainer = document.createElement('article');
+// messagesContainer.id = "messages";
+
+//  for (i=0; i< myMessages.length; i++) {
+// let messageChild = document.createElement('message');
+// messageChild.className = "message";
+// messageChild.innerHTML = myMessages[i];
+// messagesContainer.appendChild(messageChild);
+// //print to the conversation to the DOM
+// studentContainer.appendChild(messagesContainer); // recycled the querySelector from the other exercise here
+// }
+// //printing the finished populated element to the console.=
+// console.log(messagesContainer);
+
+
+// *****************************************************
+// //refactored my code to rely on DOM fragments instead 
+// *****************************************************
+
 const myMessages = ["hello is this Mom? ", "Hi Guy, this is Mom. How you doing? ", "All good, doing some JS exercises... ", "On 4th of July??! god you're a nerd"];
+
+const chatFragment = document.createDocumentFragment()
 
 const messagesContainer = document.createElement('article');
 messagesContainer.id = "messages";
+chatFragment.appendChild(messagesContainer);
 
  for (i=0; i< myMessages.length; i++) {
 let messageChild = document.createElement('message');
 messageChild.className = "message";
 messageChild.innerHTML = myMessages[i];
 messagesContainer.appendChild(messageChild);
+chatFragment.appendChild(messagesContainer)
 //print to the conversation to the DOM
-studentContainer.appendChild(messagesContainer); // recycled the querySelector from the other exercise here
+chatContainer.appendChild(chatFragment); 
 }
 //printing the finished populated element to the console.=
 console.log(messagesContainer);
