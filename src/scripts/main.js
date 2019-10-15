@@ -128,10 +128,35 @@ const createStudentComponent = (studentObject) => {
   `
 }
 
- console.log(createStudentComponent(students)); // testing the function
+//  console.log(createStudentComponent(students)); // testing the function
 
 
+// ******************************************************************************************************
+// Challenge: Generic HTML Function
+// Look at the three functions you created to build an h1, a section, and an aside. Notice that each one follows the same pattern of accepting a single argument - a string - and outputting a single HTML component. Since there is a pattern, you can consider writing a single function that generalizes the creation of an HTML component even further.
 
+// Create one function that will generate any HTML component, with any content. It should be defined with three arguments.
 
+// The type of HTML component to make
+// The content of the component
+// The value of the class attribute
+// const createStudentComponent = (student) => `
+//     <div id="student">
+//         ${element("h1", student.name, "xx-large passing")}
+//         ${element("section", student.subject, "bordered dashed section--padded")}
+//         ${element("aside", student.info, "pushRight")}
+//     </div>
+// `
 
+const createGenereicHTML = (htmlComponent, componentContent, classAttributeValue ) => {
+    
+  let myCreatedContent = 
+    `
+    <${htmlComponent} id="${classAttributeValue}">
+       ${componentContent}
+    </${htmlComponent}>
+  `
+  return myCreatedContent;
+}
 
+console.log(createGenereicHTML("h1","bla bla bla","student"));
