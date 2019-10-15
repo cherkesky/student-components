@@ -74,13 +74,15 @@ const students = [
   }
 ]
 
+
+
 const studentContainer = document.querySelector("#container")
 
 
-for (let i=0; students.length; i++) {
+for (let i=0; i<students.length; i++) {
   let studentComponent = ""
   if (students[i].score >= 60) {
-    debugger
+   
        studentComponent = `
        <div class="student">
       <h1 class="xx-large passing">${students[i].name} </h1>
@@ -100,3 +102,36 @@ for (let i=0; students.length; i++) {
     studentContainer.innerHTML +=  studentComponent;
 }
 }
+
+// // ///Practice: One Object to Rule Them All
+// // Instead of defining four arguments for the createStudentComponent function, and then passing the individual properties when it is invoked, refactor the function to accept the entire object as a single argument.
+
+// // Then refactor your string interpolation code to use the object properties.
+
+// const createStudentComponent = (name, subject, info) => {
+//   return `
+//       <div class="student">
+//           <h1>${name}</h1>
+//           <section>${subject}</section>
+//           <aside>${info}</aside>
+//       </div>
+//   `
+// }
+
+const createStudentComponent = (studentObject) => {
+  return `
+      <div class="student">
+          <h1>${studentObject.name}</h1>
+          <section>${studentObject.subject}</section>
+          <aside>${studentObject.info}</aside>
+      </div>
+  `
+}
+
+ console.log(createStudentComponent(students)); // testing the function
+
+
+
+
+
+
